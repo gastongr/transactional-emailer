@@ -2,6 +2,7 @@ from flask_restful import Resource, reqparse
 from models.transactional_email import TransactionalEmailModel
 from models.email_template import EmailTemplateModel
 from models.user import UserModel
+from external.exacttarget_facade import ExactTargetFacade
 import datetime
 
 class TransactionalEmail(Resource):
@@ -40,8 +41,13 @@ class TransactionalEmailList(Resource):
         transactional_email = TransactionalEmailModel(datetime.datetime.now(), **data)
 
         try:
+            ## Just testing here
+            extacttarget_facade = ExactTargetFacade();
+            extacttarget_facade.get_triggered_send_definitions()
+            ##
+
             transactional_email.save()
-        except:
-            return {"message": "An error occurred inserting the transactional email registry."}, 500
+        except Exception as e:
+            return {"message": "Exception caught: {}".format(e.message)}, 500
 
         return transactional_email.json(), 201

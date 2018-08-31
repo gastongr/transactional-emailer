@@ -1,2 +1,3 @@
 Flask-RESTful
 Flask-SQLAlchemy
+git+ssh://git@github.com/gastongr/FuelSDK-Python.git@master#egg=fuelsdk

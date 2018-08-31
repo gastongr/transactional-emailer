@@ -6,9 +6,7 @@ from resources.email_template import EmailTemplate, EmailTemplateList
 from resources.user import User, UserList
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///data.db'
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-app.config['PROPAGATE_EXCEPTIONS'] = True
+app.config.from_object('config.base')
 api = Api(app)
 
 
@@ -28,4 +26,7 @@ api.add_resource(UserList, '/users/')
 if __name__ == '__main__':
     from db import db
     db.init_app(app)
-    app.run(port=5000, debug=True)
+    app.run(host     = app.config['HOST'],
+            debug    = app.config['DEBUG'],
+            port     = app.config['PORT']
+    )

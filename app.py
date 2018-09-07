@@ -7,7 +7,7 @@ from resources.user import User, UserList
 
 app = Flask(__name__)
 app.config.from_object('config.base')
-api = Api(app)
+api = Api(app, catch_all_404s=True)
 
 
 @app.before_first_request

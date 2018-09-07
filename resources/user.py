@@ -24,6 +24,7 @@ class User(Resource):
             return {'message': "User with id '{}' was not found.".format(id)}, 400
 
         user.email = data['email']
+        user.token = data['token']
         user.save()
 
         return user.json()
@@ -36,6 +37,12 @@ class UserList(Resource):
         required=True,
         help="email field is required on the request body!"
     )
+    parser.add_argument(
+        'token',
+        type=str,
+        required=True,
+        help="token field is required on the request body!"
+    )
 
     def get(self):
         return {'items': list(map(lambda x: x.json(), UserModel.query.all()))}
@@ -47,7 +54,7 @@ class UserList(Resource):
         if user:
             return {'message': "A user with the email '{}' already exists.".format(data['email'])}, 400
 
-        new_user = UserModel(data['email'])
+        new_user = UserModel(data['email'], data['token'])
 
         try:
             new_user.save()

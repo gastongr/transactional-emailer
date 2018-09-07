@@ -10,7 +10,7 @@ PROPAGATE_EXCEPTIONS           = True
 
 # Fuel SDK Settings
 FUELSDK_APP_SIGNATURE       = 'none'
-FUELSDK_CLIENT_ID           = '####'
-FUELSDK_CLIENT_SECRET       = '####'
-FUELSDK_DEFAULT_WSDL        = 'https://webservice.test.exacttarget.com/Service.asmx?wsdl'
-FUELSDK_AUTH_URL            = 'https://auth-test.exacttargetapis.com/v1/requestToken?legacy=1'
+FUELSDK_CLIENT_ID           = '###'
+FUELSDK_CLIENT_SECRET       = '###'
+FUELSDK_DEFAULT_WSDL        = 'https://webservice.exacttarget.com/etframework.wsdl'
+FUELSDK_AUTH_URL            = 'https://auth.exacttargetapis.com/v1/requestToken?legacy=1'

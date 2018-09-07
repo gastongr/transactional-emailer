@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "9d2c7faa-a797-42c0-b26d-d2e3854c94ea",
+		"_postman_id": "b79d5608-d80d-4fe1-8143-76ea9c525ff9",
 		"name": "Transactional Emailer API",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -45,7 +45,10 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "http://127.0.0.1:5000/transactional-emails/",
 							"protocol": "http",
@@ -81,7 +84,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"transaction_name\": \"ABANDONED_CART\",\n    \"email_subject\": \"Your cart was abandoned\",\n    \"email_body\": \"Continue shopping\"\n}"
+							"raw": "{\n    \"transaction_name\": \"ABANDONED_CARTsdsd\",\n    \"email_subject\": \"Your cart was abandoned\",\n    \"email_body\": \"Continue shopping\"\n}"
 						},
 						"url": {
 							"raw": "http://127.0.0.1:5000/email-templates/",
@@ -106,7 +109,10 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "http://127.0.0.1:5000/email-templates/1",
 							"protocol": "http",
@@ -162,7 +168,10 @@
 					"request": {
 						"method": "DELETE",
 						"header": [],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "http://127.0.0.1:5000/email-templates/1",
 							"protocol": "http",
@@ -186,7 +195,10 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "http://127.0.0.1:5000/email-templates/",
 							"protocol": "http",
@@ -244,7 +256,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"email\": \"gaston.greco@gmail.com\"\n}"
+							"raw": "{\n    \"email\": \"gaston.greco@gmail.com\",\n    \"token\": \"132213hhihui-123bibi123-232\"\n}"
 						},
 						"url": {
 							"raw": "http://127.0.0.1:5000/users/",
@@ -269,7 +281,10 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "http://127.0.0.1:5000/users/1",
 							"protocol": "http",
@@ -300,7 +315,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"email\": \"gaston.greco@hotmail.com\"\n}"
+							"raw": "{\n    \"email\": \"gaston.greco@hotmail.com\",\n    \"token\": \"987654hhihui-123bibi123-232\"\n}"
 						},
 						"url": {
 							"raw": "http://127.0.0.1:5000/users/1",
@@ -325,7 +340,10 @@
 					"request": {
 						"method": "DELETE",
 						"header": [],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "http://127.0.0.1:5000/users/1",
 							"protocol": "http",
@@ -349,7 +367,10 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "http://127.0.0.1:5000/users/",
 							"protocol": "http",
@@ -362,6 +383,35 @@
 							"port": "5000",
 							"path": [
 								"users",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User Export",
+			"item": [
+				{
+					"name": "Perform User Export",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://127.0.0.1:5000/user-exports/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"user-exports",
 								""
 							]
 						}
